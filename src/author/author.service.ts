@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 import { author } from '@prisma/client';
 import { CreateAuthorInput } from './dto/create-author.input';
+import { UpdateAuthorInput } from './dto/update-author.input';
 
 @Injectable()
 export class AuthorService {
@@ -35,4 +36,14 @@ export class AuthorService {
         })
     }
 
+    editAuthor(updateAuthor: UpdateAuthorInput): Promise<author> {
+        return this.prisma.author.update({
+            where: {id: updateAuthor.id},
+            data: {
+                name: updateAuthor.name,
+                age: updateAuthor.age,
+                email: updateAuthor.email == null ? "" : updateAuthor.email
+            }
+        })
+    }
 }
