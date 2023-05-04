@@ -1,6 +1,7 @@
 import { Resolver, Query, Args, Mutation } from '@nestjs/graphql';
 import { AuthorService } from './author.service';
 import { CreateAuthorInput } from './dto/create-author.input';
+import { UpdateAuthorInput } from './dto/update-author.input';
 import { Author } from './entities/author.eitity';
 
 @Resolver(of => Author)
@@ -21,5 +22,10 @@ export class AuthorResolver {
     @Mutation(returns => Author)
     createAuthor(@Args('createAuthorInput') createAuthor: CreateAuthorInput): Promise<Author> {
         return this.authorService.newAuthor(createAuthor);
+    }
+
+    @Mutation(reutnrs => Author)
+    updateAuthor(@Args('updateAuthorInput') updateAuthor: UpdateAuthorInput) : Promise<Author> {
+        return this.authorService.editAuthor(updateAuthor);
     }
 }
