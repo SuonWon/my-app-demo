@@ -23,5 +23,5 @@ model author {
   name String
   age Int
   email String @unique
-  books book[] 
+  books book[]
 }

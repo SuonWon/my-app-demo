@@ -26,7 +26,7 @@ import { AuthorModule } from './author/author.module';
     BookModule,
     AuthorModule
   ],
-  controllers: [AppController],
+  //controllers: [AppController],
   providers: [AppService, BookService, BookResolver, PrismaService, AuthorService, AuthorResolver],
 })
 export class AppModule {}
