@@ -52,7 +52,7 @@ input CreateAuthorInput {
 
 input UpdateAuthorInput {
   id: String!
-  name: String!
-  age: Int!
+  name: String
+  age: Int
   email: String
 }

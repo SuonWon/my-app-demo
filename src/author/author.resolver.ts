@@ -12,7 +12,6 @@ export class AuthorResolver {
     @Query(returns => [Author])
     getAuthors(): Promise<Author[]> {
         const data = this.authorService.findAll();
-        data.then(rec => console.log(JSON.stringify(rec)));
         return data;
     }
 

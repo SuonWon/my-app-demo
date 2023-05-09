@@ -15,5 +15,5 @@ export class CreateAuthorInput {
 
     @Field({nullable: true})
     @IsEmail()
-    email: string
+    email?: string
 }

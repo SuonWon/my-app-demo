@@ -8,15 +8,13 @@ export class UpdateAuthorInput {
     @Field()
     id: string
 
-    @Field()
-    @IsNotEmpty()
-    name: string
+    @Field({nullable: true})
+    name?: string
 
-    @Field(type => Int)
-    @IsNotEmpty()
-    age: number
+    @Field(type => Int, {nullable: true})
+    age?: number
 
     @Field({nullable: true})
     @IsEmail()
-    email: string
+    email?: string
 }

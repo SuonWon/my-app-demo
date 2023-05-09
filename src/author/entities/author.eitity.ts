@@ -14,7 +14,7 @@ export class Author {
     age: Number
 
     @Field({nullable: true})
-    email: string
+    email?: string
 
     @Field(() => Book, {nullable: true})
     books?: Book[]
