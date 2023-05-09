@@ -15,7 +15,7 @@ model book {
   title String
   genre String
   authorId String @db.ObjectId
-  author author @relation(fields: [authorId], references: [id])
+  author author @relation("joined-author",fields: [authorId], references: [id])
 }
 
 model author {
@@ -23,5 +23,5 @@ model author {
   name String
   age Int
   email String?
-  books book[]
+  books book[] @relation("joined-author")
 }

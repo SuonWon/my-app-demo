@@ -31,7 +31,7 @@ export class AuthorService {
             data: {
                 name: newAuthor.name,
                 age: Number(newAuthor.age),
-                email: newAuthor.email == null ? "" : newAuthor.email
+                email: newAuthor.email
             }
         })
     }
@@ -42,7 +42,7 @@ export class AuthorService {
             data: {
                 name: updateAuthor.name,
                 age: updateAuthor.age,
-                email: updateAuthor.email == null ? "" : updateAuthor.email
+                email: updateAuthor.email
             }
         })
     }
