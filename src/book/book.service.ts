@@ -43,6 +43,12 @@ export class BookService {
             }
         })
     }
+
+    deleteBook(id: string): Promise<book> {
+        return this.prisma.book.delete({
+            where: { id: id }
+        });
+    }
     
     findAuthor(@Args('authorId', {type: () => String}) authorId: string): Promise<Author> {
         return this.authorService.findById(authorId);
