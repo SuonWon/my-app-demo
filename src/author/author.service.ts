@@ -46,4 +46,10 @@ export class AuthorService {
             }
         })
     }
+
+    deleteAuthor(id: string): Promise<author> {
+        return this.prisma.author.delete({
+            where: { id: id}
+        })
+    }
 }

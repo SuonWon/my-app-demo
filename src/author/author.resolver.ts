@@ -25,8 +25,13 @@ export class AuthorResolver {
         return this.authorService.newAuthor(createAuthor);
     }
 
-    @Mutation(reutnrs => Author)
+    @Mutation(returns => Author)
     updateAuthor(@Args('updateAuthorInput') updateAuthor: UpdateAuthorInput) : Promise<Author> {
         return this.authorService.editAuthor(updateAuthor);
+    }
+
+    @Mutation(returns => Author)
+    deleteAuthor(@Args('id', {type: () => String}) id: string): Promise<Author> {
+        return this.authorService.deleteAuthor(id);
     }
 }

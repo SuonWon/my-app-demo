@@ -7,10 +7,12 @@ export class UpdateBookInput {
     @Field()
     id: string
 
-    @Field()
-    @IsNotEmpty()
-    title: string;
+    @Field({nullable: true})
+    title?: string;
 
     @Field({nullable: true})
-    genre: string
+    genre?: string
+
+    @Field({nullable: true})
+    authorId?: string
 }

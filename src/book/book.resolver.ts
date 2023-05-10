@@ -34,4 +34,9 @@ export class BookResolver {
     updateBook(@Args('updateBookInput') updateBook: UpdateBookInput) : Promise<Book> {
         return this.bookService.editBook(updateBook);
     }
+
+    @Mutation(returns => Book)
+    deleteBook(@Args('id', {type: () => String}) id: string): Promise<Book> {
+        return this.bookService.deleteBook(id);
+    }
 }
