@@ -16,6 +16,6 @@ export class Author {
     @Field({nullable: true})
     email?: string
 
-    @Field(() => Book, {nullable: true})
+    @Field(() => [Book], {nullable: true})
     books?: Book[]
 }
