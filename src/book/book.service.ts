@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Scope } from '@nestjs/common';
 import { PrismaService } from 'src/prisma.service';
 import { author, book } from '@prisma/client';
 import { CreateBookInput } from './dto/create-book.input';
@@ -7,7 +7,7 @@ import { AuthorService } from 'src/author/author.service';
 import { Author } from 'src/author/entities/author.eitity';
 import { Args } from '@nestjs/graphql';
 
-@Injectable()
+@Injectable({scope: Scope.REQUEST})
 export class BookService {
 
     constructor(private prisma: PrismaService, private authorService: AuthorService) {}
